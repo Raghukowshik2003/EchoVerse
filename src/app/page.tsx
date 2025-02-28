@@ -4,9 +4,6 @@ import Image from 'next/image';
 import React, { useState, ChangeEvent, useEffect } from "react";
 import {
   IconCopy,
-  IconStar,
-  IconThumbDown,
-  IconThumbUp,
   IconVolume,
 } from "@tabler/icons-react";
 import SpeechRecognitionComponent from "@/components/SpeechRecognition/SpeechRecognition";
@@ -241,7 +238,7 @@ const Home: React.FC = () => {
                               }
                             />
                             <FileUpload handleFileUpload={handleFileUpload} />
-                            <LinkPaste handleLinkPaste={handleLinkPaste} />
+                           
                           </span>
                           <span className="text-sm pr-4">
                             {sourceText.length} / 2000
@@ -287,13 +284,7 @@ const Home: React.FC = () => {
                                 Copied!
                               </span>
                             )}
-                            <IconThumbUp size={22} onClick={handleLike} />
-                            <IconThumbDown size={22} onClick={handleDislike} />
-                            <IconStar
-                              size={22}
-                              onClick={handleFavorite}
-                              className={favorite ? "text-yellow-500" : ""}
-                            />
+                            
                           </div>
                         </div>
                       </div>
