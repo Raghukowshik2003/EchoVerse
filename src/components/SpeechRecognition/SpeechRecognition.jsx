@@ -30,7 +30,7 @@ const SpeechRecognitionComponent = ({ setSourceText, getLanguageCode, selectedLa
     <div>
       <IconMicrophone
         size={24}
-        className={`cursor-pointer ${listening ? "text-green-500" : "text-gray-400"}`}
+        className={`cursor-pointer ${listening ? "text-green-500" : "text-white"}`}
         onClick={handleVoiceRecording}
       />
     </div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.24.7",
+    "@google-cloud/translate": "^8.5.1",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.71",
     "@tabler/icons-react": "^3.8.0",
@@ -18,7 +19,7 @@
     "@tsparticles/slim": "^3.8.1",
     "@types/react-speech-recognition": "^3.9.5",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",

@@ -1,13 +1,14 @@
+// src/hooks/useTranslate.jsx
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// Mapping language names to their ISO codes
+// Mapping language names to their ISO codes (Google Cloud uses different codes in some cases)
 const languageCodes = {
   English: "en",
   Spanish: "es",
   French: "fr",
   German: "de",
-  Chinese: "zh-CN",
+  Chinese: "zh", // Simplified Chinese for Google Cloud
   Hindi: "hi",
 };
 
@@ -18,12 +19,12 @@ const useTranslate = (sourceText, selectedLanguage) => {
     const handleTranslate = async (sourceText) => {
       try {
         const targetLang = languageCodes[selectedLanguage] || "en";
-        const encodedText = encodeURIComponent(sourceText);
-        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodedText}`;
-        const response = await axios.get(url);
-        // Response structure: [ [ [translatedText, originalText, ...] ], ... ]
-        const translatedText = response.data[0][0][0];
-        setTargetText(translatedText);
+        const response = await axios.post('/api/translate', {
+            text: sourceText,
+            targetLang: targetLang,
+        });
+
+        setTargetText(response.data.translatedText);
       } catch (error) {
         console.error("Error translating text:", error);
       }
@@ -32,7 +33,7 @@ const useTranslate = (sourceText, selectedLanguage) => {
     if (sourceText.trim()) {
       const timeoutId = setTimeout(() => {
         handleTranslate(sourceText);
-      }, 500);
+      }, 1000);
 
       return () => clearTimeout(timeoutId);
     }
