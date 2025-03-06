@@ -31,10 +31,10 @@ const MeetTheCreators: React.FC = () => {
             </div>
           </div>
           <div className={styles.card}>
-            <Image src="/one.png" alt="Creator 3" className={styles.cardImage} width={300} height={200} />
+            <Image src="/Tarun.jpg" alt="Creator 3" className={styles.cardImage} width={300} height={200} />
             <div className={styles.cardContent}>
-              <p className={styles.cardText}>Creator 3 Name</p>
-              <a href="https://www.linkedin.com/in/creator3/" target="_blank" rel="noopener noreferrer" className={styles.linkedinLink}>
+              <p className={styles.cardText}>Chipani Tarun Manikanta</p>
+              <a href="https://www.linkedin.com/in/tarun-manikanta-3a677a328/" target="_blank" rel="noopener noreferrer" className={styles.linkedinLink}>
                 <FaLinkedin />
               </a>
             </div>
